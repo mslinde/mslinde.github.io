@@ -164,9 +164,32 @@ nav { position: relative; }
   .headshot { width: 100%; border-radius: var(--radius); }
 }
 
-.cards { display: grid; gap: 24px; grid-template-columns: 1fr; }
-@media (min-width: 640px) { .cards { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 960px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+/* Projects row: one horizontal row that pages with the arrow buttons */
+.section-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 1rem; }
+.section-head h2 { margin: 0; }
+.carousel-controls { display: flex; gap: 8px; }
+.carousel-btn {
+  display: grid; place-items: center; width: 40px; height: 40px; padding: 0;
+  border-radius: 50%; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text); cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+.carousel-btn[hidden] { display: none; }
+.carousel-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.carousel-btn:disabled { opacity: 0.4; cursor: default; }
+
+.cards {
+  display: grid; gap: 24px;
+  grid-auto-flow: column; grid-auto-columns: 85%;
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  padding: 6px 0 12px; scrollbar-width: none;
+}
+.cards::-webkit-scrollbar { display: none; }
+.cards:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: var(--radius); }
+@media (min-width: 640px) { .cards { grid-auto-columns: calc((100% - 24px) / 2); } }
+@media (min-width: 960px) { .cards { grid-auto-columns: calc((100% - 48px) / 3); } }
+.cards > .card { scroll-snap-align: start; }
 .card {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
@@ -206,6 +229,6 @@ nav { position: relative; }
 
 /* ---------- Motion ---------- */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html, .cards { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }

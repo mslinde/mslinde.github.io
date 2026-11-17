@@ -81,8 +81,19 @@
     <!-- PROJECTS: copy an <article class="card"> block to add a project -->
     <section id="projects" class="section section-alt">
       <div class="container">
-        <h2>Projects</h2>
-        <div class="cards">
+        <div class="carousel">
+          <div class="section-head">
+            <h2>Projects</h2>
+            <div class="carousel-controls">
+              <button class="carousel-btn" type="button" data-dir="-1" aria-label="Previous projects" hidden>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button class="carousel-btn" type="button" data-dir="1" aria-label="Next projects" hidden>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
+        <div class="cards" role="region" aria-label="Projects" tabindex="0">
           <article class="card">
             <img src="assets/img/project-1.svg" alt="Screenshot of Project One" width="640" height="400" loading="lazy">
             <div class="card-body">
@@ -110,6 +121,7 @@
               <p class="card-links"><a href="#">Live</a><a href="#">Details</a></p>
             </div>
           </article>
+        </div>
         </div>
       </div>
     </section>

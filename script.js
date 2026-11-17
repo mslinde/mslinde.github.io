@@ -1,4 +1,4 @@
-// Mobile nav, theme toggle, footer year. The page works without this file.
+// Mobile nav, theme toggle, projects carousel, footer year. The page works without this file.
 (function () {
   var root = document.documentElement;
 
@@ -39,4 +39,29 @@
       try { localStorage.setItem('theme', next); } catch (e) {}
     });
   }
+
+  // Projects carousel: arrows page one view at a time; shown only when tiles overflow
+  document.querySelectorAll('.carousel').forEach(function (carousel) {
+    var track = carousel.querySelector('.cards');
+    var btns = carousel.querySelectorAll('.carousel-btn');
+    if (!track || btns.length !== 2) return;
+    var prev = btns[0], next = btns[1];
+    var update = function () {
+      var overflow = track.scrollWidth > track.clientWidth + 1;
+      prev.hidden = next.hidden = !overflow;
+      prev.disabled = track.scrollLeft <= 1;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+    };
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var dir = Number(btn.dataset.dir);
+        var smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+        track.scrollBy({ left: dir * track.clientWidth, behavior: smooth ? 'smooth' : 'auto' });
+      });
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    if ('ResizeObserver' in window) new ResizeObserver(update).observe(track);
+    else window.addEventListener('resize', update);
+    update();
+  });
 })();
