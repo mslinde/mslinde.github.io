@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name: selected projects, experience and contact details.">
+  <meta property="og:title" content="Your Name — Portfolio">
+  <meta property="og:description" content="Selected projects, experience and contact details.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og-image.svg">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Apply saved theme before paint to avoid a flash -->
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top" aria-label="Home">YN</a>
+      <nav aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Menu</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/></svg>
+        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="top" class="hero">
+      <div class="container">
+        <p class="eyebrow">Hi, I'm</p>
+        <h1>Your Name</h1>
+        <p class="tagline">Your title — e.g. Designer, Developer, Filmmaker</p>
+        <p class="lead">One or two sentences about what you do and what you care about. Keep it short and specific.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#projects">View work</a>
+          <a class="btn btn-ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container about-grid">
+        <img class="headshot" src="assets/img/headshot.svg" alt="Portrait of Your Name" width="320" height="320">
+        <div>
+          <h2>About</h2>
+          <p>A short paragraph about your background: where you started, what you work on now, and what makes your approach yours.</p>
+          <p>A second paragraph about interests, values, or the kind of work you're looking for.</p>
+          <h3>Skills</h3>
+          <ul class="tags">
+            <li>Skill one</li>
+            <li>Skill two</li>
+            <li>Skill three</li>
+            <li>Skill four</li>
+            <li>Skill five</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS: copy an <article class="card"> block to add a project -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="assets/img/project-1.svg" alt="Screenshot of Project One" width="640" height="400" loading="lazy">
+            <div class="card-body">
+              <h3>Project One</h3>
+              <p>What it is, what you did, and the result — in two sentences.</p>
+              <ul class="tags tags-sm"><li>Tag</li><li>Tag</li></ul>
+              <p class="card-links"><a href="#">Live</a><a href="#">Details</a></p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/img/project-2.svg" alt="Screenshot of Project Two" width="640" height="400" loading="lazy">
+            <div class="card-body">
+              <h3>Project Two</h3>
+              <p>What it is, what you did, and the result — in two sentences.</p>
+              <ul class="tags tags-sm"><li>Tag</li><li>Tag</li></ul>
+              <p class="card-links"><a href="#">Live</a><a href="#">Details</a></p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/img/project-3.svg" alt="Screenshot of Project Three" width="640" height="400" loading="lazy">
+            <div class="card-body">
+              <h3>Project Three</h3>
+              <p>What it is, what you did, and the result — in two sentences.</p>
+              <ul class="tags tags-sm"><li>Tag</li><li>Tag</li></ul>
+              <p class="card-links"><a href="#">Live</a><a href="#">Details</a></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
+        <ol class="timeline">
+          <li>
+            <p class="when">2024 — Present</p>
+            <h3>Role · Company</h3>
+            <p>One line on what you owned and the impact it had.</p>
+          </li>
+          <li>
+            <p class="when">2021 — 2024</p>
+            <h3>Role · Company</h3>
+            <p>One line on what you owned and the impact it had.</p>
+          </li>
+          <li>
+            <p class="when">2017 — 2021</p>
+            <h3>Degree · School</h3>
+            <p>Optional: focus area or honors.</p>
+          </li>
+        </ol>
+        <a class="btn btn-ghost" href="assets/resume.pdf" download>Download resume (PDF)</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-alt">
+      <div class="container contact">
+        <h2>Contact</h2>
+        <p class="lead">Open to new projects and conversations. The fastest way to reach me is email.</p>
+        <a class="btn btn-primary" href="mailto:you@example.com">you@example.com</a>
+        <ul class="socials">
+          <li><a href="https://github.com/your-username" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/your-profile" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Your Name</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
