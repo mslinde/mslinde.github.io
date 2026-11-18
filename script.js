@@ -46,6 +46,7 @@
     var btns = carousel.querySelectorAll('.carousel-btn');
     if (!track || btns.length !== 2) return;
     var prev = btns[0], next = btns[1];
+    carousel.classList.add('is-enhanced');
     var update = function () {
       var overflow = track.scrollWidth > track.clientWidth + 1;
       prev.hidden = next.hidden = !overflow;
@@ -55,8 +56,9 @@
     btns.forEach(function (btn) {
       btn.addEventListener('click', function () {
         var dir = Number(btn.dataset.dir);
+        var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
         var smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches;
-        track.scrollBy({ left: dir * track.clientWidth, behavior: smooth ? 'smooth' : 'auto' });
+        track.scrollBy({ left: dir * (track.clientWidth + gap), behavior: smooth ? 'smooth' : 'auto' });
       });
     });
     track.addEventListener('scroll', update, { passive: true });

@@ -183,9 +183,12 @@ nav { position: relative; }
   grid-auto-flow: column; grid-auto-columns: 85%;
   overflow-x: auto; overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory; scroll-behavior: smooth;
-  padding: 6px 0 12px; scrollbar-width: none;
+  padding: 6px 0 12px;
+  scrollbar-width: thin; scrollbar-color: var(--border) transparent;
 }
-.cards::-webkit-scrollbar { display: none; }
+/* Arrows are active (script.js ran): hide the scrollbar. Without JS it stays as the fallback. */
+.carousel.is-enhanced .cards { scrollbar-width: none; }
+.carousel.is-enhanced .cards::-webkit-scrollbar { display: none; }
 .cards:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: var(--radius); }
 @media (min-width: 640px) { .cards { grid-auto-columns: calc((100% - 24px) / 2); } }
 @media (min-width: 960px) { .cards { grid-auto-columns: calc((100% - 48px) / 3); } }
